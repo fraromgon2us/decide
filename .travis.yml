@@ -5,7 +5,7 @@ services:
 addons:
   postgresql: "9.4"
 before_script:
-  - psql -U postgres -c "DROP DATABASE IF EXISTS test_decide"
+  - psql -U postgres -c "DROP DATABASE test_decide"
   - psql -U postgres -c "create user decide password 'decide'"
   - psql -U postgres -c "create database test_decide owner decide"
   - psql -U postgres -c "ALTER USER decide CREATEDB"
@@ -18,7 +18,7 @@ install:
   - pip install -r requirements.txt
 script:
   - cd decide
-  - ./manage.py test
+  - ./manage.py test --keepdb
 branches:
   only:
   - master
