@@ -17,4 +17,6 @@ install:
 script:
   - cd decide
   - ./manage.py test
-
+branches:
+  only:
+  - master
