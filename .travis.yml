@@ -16,8 +16,16 @@ python:
 install:
   - pip install -r requirements.txt
 script:
+  - cp travis_local_settings.py local_settings.py
   - cd decide
   - ./manage.py test --keepdb
 branches:
   only:
   - master
+deploy:
+  provider: heroku
+  app: examenfraromgon2
+  strategy: git
+  api_key: $HEROKU_AUTH_TOKEN
+  on:
+    branch: master
