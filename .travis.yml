@@ -16,8 +16,8 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - cp travis_local_settings.py local_settings.py
   - cd decide
+  - cp travis_local_settings.py local_settings.py
   - ./manage.py test --keepdb
 branches:
   only:
