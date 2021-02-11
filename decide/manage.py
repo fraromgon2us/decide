@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-#CAMBIO EN EL MANAGE.PY
+
+#CAMBIO EN EL MANAGE.PY 1234 1234 1234
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "decide.settings")
     try:
